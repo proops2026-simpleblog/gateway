@@ -48,7 +48,6 @@ beforeAll(async () => {
   process.env.CONTENT_SERVICE_URL = `http://127.0.0.1:${contentServiceServer.address().port}`;
 
   jest.resetModules();
-  // eslint-disable-next-line global-require
   app = require('../src/index');
 });
 

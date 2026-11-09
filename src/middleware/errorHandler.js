@@ -27,6 +27,7 @@ function notFoundHandler(req, res) {
 // Express error-handling middleware (4-arg signature required by Express).
 // eslint-disable-next-line no-unused-vars
 function errorHandler(err, req, res, next) {
+  // eslint-disable-next-line no-console -- the only log line for unhandled errors
   console.error('[gateway] unhandled error:', err);
   const statusCode = err.statusCode || 502;
   const error = err.error || (statusCode === 502 ? 'Bad Gateway' : 'Internal Server Error');
