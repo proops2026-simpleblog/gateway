@@ -49,7 +49,7 @@ function authenticate(req, res, next) {
     const payload = jwt.verify(token, JWT_SECRET, { algorithms: ['HS256'] });
     req.auth.valid = true;
     req.auth.payload = payload;
-  } catch (err) {
+  } catch {
     // Invalid signature, expired, malformed JWT, etc. Leave valid = false;
     // requireAuth() decides whether that matters for this route.
     req.auth.valid = false;
